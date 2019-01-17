@@ -86,7 +86,7 @@ class custom_build_ext(build_ext):
 #opencv_libs = [str(lib) for lib in opencv_libs_str.strip().split()]
 #opencv_incs = [str(inc) for inc in opencv_incs_str.strip().split()]
 opencv_libs = ['/temp_opencv/opencv/build2/lib']
-opencv_incs = ['/temp_opencv/opencv/modules/core/include', '/temp_opencv/opencv/build2']
+opencv_incs = ['/temp_opencv/opencv/modules/core/include', '/temp_opencv/opencv/build2', '/temp_opencv/opencv/modules/cudaoptflow/include']
 
 extensions = [
     Extension('optflow',
