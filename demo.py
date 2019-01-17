@@ -29,4 +29,4 @@ f = optflow.brox(im0_g / 255., im1_g / 255.)
 print('shape:', f.shape)
 # cv2.imshow('brox', color_code(f))
 
-cv2.waitKey(0)
+# cv2.waitKey(0)
