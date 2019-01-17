@@ -61,8 +61,8 @@ cpdef brox(np.ndarray[np.float64_t, ndim=2, mode="c"] im0_d, np.ndarray[np.float
     :param alpha: alpha = 0.197
     :param gamma: gamma = 50.0
     :param scale_factor: scale_factor = 0.8
-    :param inner_iterations: inner_iterations = 5
-    :param outer_iterations: outer_iterations = 150
+    :param inner_iterations: inner_iterations = 10
+    :param outer_iterations: outer_iterations = 77
     :param solver_iterations: solver_iterations = 10
     :return: Flow field (NxMx2)
     """
