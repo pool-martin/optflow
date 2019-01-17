@@ -86,15 +86,10 @@ opencv_incs_str = subprocess.check_output('pkg-config --cflags opencv'.split()).
 opencv_libs = [str(lib) for lib in opencv_libs_str.strip().split()]
 opencv_incs = [str(inc) for inc in opencv_incs_str.strip().split()]
 
-eppm_src = ['EPPM/bao_pmflow_census_kernel.cu', 'EPPM/bao_pmflow_refine_kernel.cu',
-            'EPPM/bao_flow_patchmatch_multiscale_cuda.cpp',
-            'EPPM/bao_flow_patchmatch_multiscale_kernel.cu', 'EPPM/bao_pmflow_kernel.cu',
-            'EPPM/basic/bao_basic_cuda.cpp']
-
 extensions = [
     Extension('optflow',
-              sources=['optflow.pyx'] + eppm_src,
-              include_dirs=[numpy.get_include(), cuda['home'] + '/include', 'EPPM', 'EPPM/basic'] + opencv_incs,
+              sources=['optflow.pyx'],
+              include_dirs=[numpy.get_include(), cuda['home'] + '/include'] + opencv_incs,
               language='c++',
               extra_link_args=opencv_libs + ['-lcudart', '-L' + cuda['home'] + '/lib', '-L' + cuda['home'] + '/lib64',
                                              '-L' + cuda['home'] + '/lib/x86_64-linux-gnu', '-g'],

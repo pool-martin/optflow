@@ -28,7 +28,4 @@ im1_g = cv2.cvtColor(im1, cv2.COLOR_RGB2GRAY)
 f = optflow.brox(im0_g / 255., im1_g / 255.)
 cv2.imshow('brox', color_code(f))
 
-f = optflow.eppm(im0 / 255., im1 / 255.)
-cv2.imshow('eppm', color_code(f))
-
 cv2.waitKey(0)
