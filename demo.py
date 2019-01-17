@@ -26,6 +26,7 @@ im0_g = cv2.cvtColor(im0, cv2.COLOR_RGB2GRAY)
 im1_g = cv2.cvtColor(im1, cv2.COLOR_RGB2GRAY)
 
 f = optflow.brox(im0_g / 255., im1_g / 255.)
-cv2.imshow('brox', color_code(f))
+print('shape:', f.shape)
+# cv2.imshow('brox', color_code(f))
 
 cv2.waitKey(0)
