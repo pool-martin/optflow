@@ -10,7 +10,7 @@ np.import_array()
 
 cdef extern from 'src/pyopencv_converter.cpp':
     #mrc689 April 20,2017
-    cdef PyObject*pyopencv_from(const Mat& m)
+    cdef object pyopencv_from(const Mat& m)
     cdef bool pyopencv_to(PyObject*o, Mat& m)
 
 cdef extern from 'opencv2/core/core.hpp':
@@ -93,4 +93,4 @@ cpdef brox(np.ndarray[np.float64_t, ndim=2, mode="c"] im0_d, np.ndarray[np.float
     brox.get().calc(g_im0, g_im1, g_flow)
 
     g_flow.download(flow)
-    return <object> pyopencv_from(flow)
+    return pyopencv_from(flow)
